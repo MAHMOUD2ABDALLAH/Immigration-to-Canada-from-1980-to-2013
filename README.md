@@ -8,9 +8,10 @@ The dataset contains annual data on the flows of international immigrants as rec
 2. Indexing and Filtering
 3. Visualizing Dataset
 4. Line Plot of Dataset
-5. License
-6. Contact
-
+5. Area Plot of Dataset
+6. Histogram Plot of Dataset
+7. Bar chart Plot of Dataset
+### _______________________________________________________________________________________
 # 1- Exploring Dataset
 ## Dataset
 **File:** Canada.xlsx
@@ -134,7 +135,7 @@ The script prints various filtered views of the dataset to the console, demonstr
 - If encountering issues with `openpyxl`, ensure the package is installed properly.
 
 This script serves as a practical guide for working with Pandas DataFrames, focusing on **indexing, slicing, and filtering data efficiently**.
-
+### _______________________________________________________________________________________
 # 3- Visualizing Dataset
 
 ## Overview
@@ -162,7 +163,7 @@ Each graph plots the number of immigrants over a period of time (1980 - 2013), c
 - Use these images to analyze migration trends from different continents.
 - Compare the immigration rates from different regions.
 - Identify peaks and declines in immigration numbers.
-
+### _______________________________________________________________________________________
 # 4- Line Plot of Dataset
 
 ## Overview
@@ -187,7 +188,19 @@ This visualization displays immigration trends from **Haiti** to Canada over the
 
 **Description:**
 This chart highlights immigration from **Haiti**, emphasizing the spike in **2010** due to the devastating **Haiti Earthquake**. The graph includes an annotation marking this significant event, demonstrating how humanitarian crises influence migration patterns.
+### _______________________________________________________________________________________
+# 5- Area Plot of Dataset
+pending...
 
+### _______________________________________________________________________________________
+# 6- Histogram Plot of Dataset
+pending...
+
+### _______________________________________________________________________________________
+# 7- Bar chart Plot of Dataset
+pending...
+
+### _______________________________________________________________________________________
 ## Usage
 These images can be used for:
 - Understanding historical immigration trends
