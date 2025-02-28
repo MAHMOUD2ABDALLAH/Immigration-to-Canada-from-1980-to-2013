@@ -11,7 +11,7 @@ The dataset contains annual data on the flows of international immigrants as rec
 5. License
 6. Contact
 
-## Exploring Dataset
+# 1- Exploring Dataset
 ## Dataset
 **File:** Canada.xlsx
 
@@ -75,7 +75,7 @@ The dataset contains annual data on the flows of international immigrants as rec
 - Renames columns for better readability.
 - Summarizes immigration data with key statistics.
 ### _______________________________________________________________________________________
-## Indexing and Filtering
+# 2- Indexing and Filtering
 
 ## Overview
 This script demonstrates various techniques for **indexing and selecting data** from a dataset using **Pandas**. The dataset used in this example is an Excel file (`Canada.xlsx`) containing migration data.
@@ -135,10 +135,65 @@ The script prints various filtered views of the dataset to the console, demonstr
 
 This script serves as a practical guide for working with Pandas DataFrames, focusing on **indexing, slicing, and filtering data efficiently**.
 
-## Visualizing Dataset
-pending....
-## Line Plot of Dataset
-pending....
+# 3- Visualizing Dataset
+
+## Overview
+This repository contains visualizations of immigration trends from different continents over time. The graphs represent the number of immigrants from Africa, Asia, Europe, and the world to a specific country or region.
+
+## Files
+The following plots are included:
+
+1. Displays immigration trends from African countries.
+![Africa_plot](https://github.com/user-attachments/assets/89a395de-d558-48d5-b3fe-fe8de3ccc812)
+
+2. Shows immigration trends from Asian countries.
+![Asia_plot](https://github.com/user-attachments/assets/1e90c443-10df-4f8b-8a08-75ede9770962)
+
+3. Illustrates immigration trends from European countries.
+![Europe_plot](https://github.com/user-attachments/assets/4af652d6-45bb-4271-b25a-32cefe2e8403)
+
+4. Represents immigration trends from all over the world.
+![world](https://github.com/user-attachments/assets/059e6ccc-40b6-4785-8320-3d1491fb63ef)
+
+## Description
+Each graph plots the number of immigrants over a period of time (1980 - 2013), categorized by country. The trends help visualize migration patterns and how they evolved over the years.
+
+## Usage
+- Use these images to analyze migration trends from different continents.
+- Compare the immigration rates from different regions.
+- Identify peaks and declines in immigration numbers.
+
+# 4- Line Plot of Dataset
+
+## Overview
+This project contains visualizations of immigration data from different countries over time. The included images showcase trends and significant events affecting immigration patterns.
+
+## Images
+
+### 1. China & India Immigration Trends
+![China India](https://github.com/user-attachments/assets/039a1b5a-0dfa-43a9-8aba-e74be59e177f)
+
+**Description:**
+This line plot compares the number of immigrants from **China** and **India** to Canada from **1980 to 2013**. The trends highlight significant increases over time, with some fluctuations reflecting policy changes and global events.
+
+### 2. Haiti Immigration Trends
+![haiti_1](https://github.com/user-attachments/assets/c0b879bb-4683-4d23-bf57-463ab5106cdd)
+
+**Description:**
+This visualization displays immigration trends from **Haiti** to Canada over the years. The data indicates fluctuations in migration numbers, with notable variations across different periods.
+
+### 3. Haiti Immigration and 2010 Earthquake Impact
+![Haiti2010_1](https://github.com/user-attachments/assets/0eab1334-ef94-4d8a-80e9-202b5629999a)
+
+**Description:**
+This chart highlights immigration from **Haiti**, emphasizing the spike in **2010** due to the devastating **Haiti Earthquake**. The graph includes an annotation marking this significant event, demonstrating how humanitarian crises influence migration patterns.
+
+## Usage
+These images can be used for:
+- Understanding historical immigration trends
+- Analyzing the impact of global events on migration
+- Supporting research or presentations on immigration patterns
+
 ## License
 This project is licensed under the IBM License - see the [LICENSE](https://1drv.ms/b/c/52d0424acc8434f6/EfoB2LBMLllIsL8CcNbGAAIBT8B6VQ_HgJ7_AzA2-nq90Q?e=0TmsS3) file for details.
 ## Contact
