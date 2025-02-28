@@ -2,13 +2,14 @@
 import numpy as np
 import pandas as pd
 import openpyxl
-from keras.src.ops import dtype
+import os
+repo_path = os.path.expanduser('Canada.xlsx')
 
 df_Canada = pd.read_excel(
-    'C:\\Users\Mahmoud\Microsoft-PowerUp\Mahmoud Mohamed Abdallah - Documents\introDataAnalyse\Canada.xlsx',
-    skiprows=range(20), skipfooter=2)
-print('Data downloaded and read into a dataframe!')
-
+    os.path.join(repo_path),
+    skiprows=range(20),
+    skipfooter=29
+)
 # before we start to filter we should rename the main headers we need
 df_Canada.rename(columns={'OdName': 'Country', 'AreaName': 'Continent', 'RegName': 'Region'}, inplace=True)
 print("---------------------------------------------------------------------------------------------------")
