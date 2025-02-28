@@ -5,10 +5,16 @@
 import numpy as np
 import pandas as pd
 import openpyxl
+import os
+
+# Get the path to your cloned GitHub repo
+repo_path = os.path.expanduser('Canada.xlsx')  # Modify this
 
 df_Canada = pd.read_excel(
-    'C:\\Users\Mahmoud\Microsoft-PowerUp\Mahmoud Mohamed Abdallah - Documents\introDataAnalyse\Canada.xlsx',
-    skiprows=range(20), skipfooter=2)
+    os.path.join(repo_path),
+    skiprows=range(20),
+    skipfooter=29
+)
 print('Data downloaded and read into a dataframe!')
 print("---------------------------------------------------------------------------------------------------")
 # Getting first 5 rows of the dataset
