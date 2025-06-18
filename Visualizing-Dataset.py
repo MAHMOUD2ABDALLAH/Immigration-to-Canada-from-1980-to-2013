@@ -31,7 +31,6 @@ df_all = df_all.transpose()
 print(df_all.head())
 df_all.index = df_all.index.map(int)
 df_all.plot(kind='line')
-plt.s
 plt.title('Immigrants from All over the world')
 plt.ylabel('Number of Immigrants')
 plt.xlabel('Years')
