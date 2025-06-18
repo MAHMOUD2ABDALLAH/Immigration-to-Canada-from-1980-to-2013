@@ -8,7 +8,7 @@ import openpyxl
 import os
 
 # Get the path to your cloned GitHub repo
-repo_path = os.path.expanduser('Canada.xlsx')  # Modify this
+repo_path = os.path.expanduser('Canada.xlsx')
 
 df_Canada = pd.read_excel(
     os.path.join(repo_path),
