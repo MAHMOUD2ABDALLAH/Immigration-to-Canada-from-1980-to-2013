@@ -8,10 +8,16 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+import os
+
+repo_path = os.path.expanduser('Canada.xlsx')
 
 df_Canada = pd.read_excel(
-    'C:\\Users\Mahmoud\Microsoft-PowerUp\Mahmoud Mohamed Abdallah - Documents\introDataAnalyse\Canada.xlsx',
-    skiprows=range(20), skipfooter=2)
+    os.path.join(repo_path),
+    skiprows=range(20),
+    skipfooter=29
+)
+
 print('Data downloaded and read into a dataframe!')
 
 years = list(map(str, range(1980, 2014)))
@@ -23,22 +29,21 @@ df_Canada.set_index('Country', inplace=True)
 df_Canada.columns = df_Canada.columns.map(str)
 
 # First, we will extract the data series for Haiti.
-# haiti = df_Canada.loc['Haiti', years]
-# print(haiti.head())
+haiti = df_Canada.loc['Haiti', years]
+print(haiti.head())
 # let's change the index values of Haiti to type integer for plotting
-# haiti.index = haiti.index.map(int)
-# haiti.plot(kind='line')
-# plt.title('Immigration from Haiti')
-# plt.ylabel('Number of immigrants')
-# plt.xlabel('Years')
-# plt.grid(True)
-# plt.show() <---- Uncomment me if you want the previous visual
-# print("---------------------------------------------------------------------------------------------------")
+haiti.index = haiti.index.map(int)
+haiti.plot(kind='line')
+plt.title('Immigration from Haiti')
+plt.ylabel('Number of immigrants')
+plt.xlabel('Years')
+plt.grid(True)
+print("---------------------------------------------------------------------------------------------------")
 # We can clearly observe a significant increase in the number of immigrants from Haiti starting in 2010,
 # coinciding with Canada's increased efforts to accept Haitian refugees.
-# print("------------------------------Let's annotate this spike on the plot.-------------------------------")
-# plt.text(2000, 6000, "2010 Earthquake")
-# plt.show() <---- Uncomment me if you want the previous visual
+print("------------------------------Let's annotate this spike on the plot.-------------------------------")
+plt.text(2000, 6000, "2010 Earthquake")
+plt.show()
 
 # We can easily add more countries to line plot to make meaningful comparisons immigration from different countries.
 print("--------Let's compare the number of immigrants from India and China from 1980 to 2013.-------------")
