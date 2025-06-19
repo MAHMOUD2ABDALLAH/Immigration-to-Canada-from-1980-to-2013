@@ -1,13 +1,18 @@
+# Question: What is the frequency distribution of the number (population) of new immigrants from the various countries to Canada in 2013?
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+import os
 
-# Question: What is the frequency distribution of the number (population) of new immigrants from the various countries to Canada in 2013?
+repo_path = os.path.expanduser('Canada.xlsx')
 
 df_Canada = pd.read_excel(
-    'C:\\Users\Mahmoud\Microsoft-PowerUp\Mahmoud Mohamed Abdallah - Documents\introDataAnalyse\Canada.xlsx',
-    skiprows=range(20), skipfooter=2)
+    os.path.join(repo_path),
+    skiprows=range(20),
+    skipfooter=29
+)
 print('Data downloaded and read into a dataframe!')
 print('dimensions before:', df_Canada.shape)
 years = list(map(str, range(1980, 2014)))
@@ -45,7 +50,7 @@ count, bin_edges = np.histogram(df_Canada['2013'])
 print(count)
 print(bin_edges)
 print("---------------------------------------------------------------------------------------------------")
-df_Canada['2013'].plot(kind='hist', figsize=(8, 5),xticks=bin_edges)
+df_Canada['2013'].plot(kind='hist', figsize=(8, 5), xticks=bin_edges)
 plt.title('Histogram of Immigration from 195 Countries in 2013')
 plt.ylabel('Number of Countries')
 plt.xlabel('Number of Immigrants')
