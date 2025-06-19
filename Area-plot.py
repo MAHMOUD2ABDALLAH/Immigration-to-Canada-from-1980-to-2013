@@ -2,11 +2,14 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-
+import os
+repo_path = os.path.expanduser('Canada.xlsx')
 
 df_Canada = pd.read_excel(
-    'C:\\Users\Mahmoud\Microsoft-PowerUp\Mahmoud Mohamed Abdallah - Documents\introDataAnalyse\Canada.xlsx',
-    skiprows=range(20), skipfooter=2)
+    os.path.join(repo_path),
+    skiprows=range(20),
+    skipfooter=29
+)
 print('Data downloaded and read into a dataframe!')
 print('dimensions before:', df_Canada.shape)
 years = list(map(str, range(1980, 2014)))
@@ -41,7 +44,7 @@ df_top.plot(kind='area', alpha=1, figsize=(10, 5))
 plt.title('Immigration Trend of Top 5 Countries')
 plt.ylabel('Number of Immigrants')
 plt.xlabel('Years')
-# plt.text(2007, 42000, "alpha=1 for better visualization")
+plt.text(2007, 42000, "alpha=1 for better visualization")
 plt.show()
 print("------------------------get the 5 countries with the least contribution----------------------------")
 
@@ -51,17 +54,6 @@ df_least5 = df_least5[years].transpose()
 df_least5.index = df_least5.index.map(int)
 df_least5.plot(kind='area', alpha=1, figsize=(10, 5))
 plt.title('Immigration Trend of 5 Countries with Least Contribution to Immigration')
-plt.ylabel('Number of Immigrants')
+plt.ylabel('Number of Immigrants in thousands')
 plt.xlabel('Years')
-
 plt.show()
-print("-------------------Another method for plotting using OOP ax to as Artist layer---------------------")
-# df_least5 = df_Canada.tail(5)
-# df_least5 = df_least5[years].transpose()
-# df_least5.head()
-# df_least5.index = df_least5.index.map(int)
-# ax = df_least5.plot(kind='area', alpha=0.55, figsize=(10, 5))
-# ax.set_title('Immigration Trend of 5 Countries with Least Contribution to Immigration (ax.OOP)')
-# ax.set_ylabel('Number of Immigrants')
-# ax.set_xlabel('Years')
-# plt.show()
