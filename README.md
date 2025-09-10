@@ -40,6 +40,7 @@ plot_continent_trends(df, continent)  # Saves to respective plot file
 
 
 ## Repository Structure
+```
 visualizing-dataset/
 ├── data/
 │ └── Canada.xlsx
@@ -53,3 +54,4 @@ visualizing-dataset/
 ├── outputs/
 │ └── sample_output.md
 └── README.md
+```
