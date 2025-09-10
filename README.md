@@ -39,11 +39,11 @@ plt.xlabel('Number of Immigrants')
 plt.show()
 ```
 **Structure**
-
+```
 ├── README.md
 ├── Histogram-plot.py
 ├── Canada.xlsx
 └── assets/
     ├── all_immigrants_2013.png
     └── bins_tuning.png
-
+```
