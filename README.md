@@ -31,8 +31,10 @@ df_CI.plot(kind='line')
 ```
 
 ### File Structure for Branch:
+```
 line-plot/
 ├── README.md 
 ├── Line-plot.py 
 ├── haiti2010_plot.png
 └── china_india_plot.png 
+```
