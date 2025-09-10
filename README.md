@@ -35,8 +35,10 @@ df_least5[years].transpose().plot(kind='area')
 ```
 
 ### File Structure:
+```
 area-plot/
 ├── README.md
 ├── Area-plot.py
 ├── top5_countries.png
 └── least5_countries.png
+```
