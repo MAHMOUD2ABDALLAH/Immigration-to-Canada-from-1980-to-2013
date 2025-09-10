@@ -71,7 +71,7 @@ Sample:
 ## Final Dataset Structure
 - **Dimensions**: 168 countries × 42 columns
 - **Columns**: ['Type', 'Coverage', 'AREA', ..., '2013']
-
+```
 Indexing-and-Filtering/
 ├── data/
 │   └── Canada.xlsx
@@ -80,3 +80,4 @@ Indexing-and-Filtering/
 ├── output/
 │   └── OUTPUT.md
 └── README.md
+```
