@@ -1,4 +1,4 @@
-# 7. Bar Chart Plot: Icelandic Immigration to Canada (1980-2013)
+# 7. Bar Chart Plot: Icelandic Immigration
 
 This branch focuses on Icelandic immigration to Canada from 1980 to 2013 using bar chart visualizations, with particular emphasis on analyzing the impact of the 2008-2011 financial crisis on migration patterns.
 
