@@ -13,3 +13,7 @@ The dataset contains annual data on the flows of international immigrants as rec
 5. Area Plot of Dataset
 6. Histogram Plot of Dataset
 7. Bar chart Plot of Dataset
+8. Pie chart Plot of Dataset
+9. Box chart Plot of Dataset **( pending...)**
+10. Scatter chart Plot of Dataset **( pending...)**
+11. Bubble chart Plot of Dataset **( pending...)**
