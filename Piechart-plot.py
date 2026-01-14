@@ -104,3 +104,27 @@ plt.axis("equal")
 plt.legend(labels=df_continents.index, bbox_to_anchor=(1.1, -0.1), loc="lower right")
 
 plt.show()
+# Using a pie chart, explore the proportion (percentage) of new immigrants grouped by continents in the year 2013.
+explode_list = [0.0, 0, 0, 0.1, 0.1, 0.2] # ratio for each continent with which to offset each wedge.
+
+df_continents['2013'].plot(kind='pie',
+                                figsize=(10, 8),
+                                autopct='%1.1f%%', 
+                                startangle=90,    
+                                shadow=False,       
+                                labels=None,                 # turn off labels on pie chart
+                                pctdistance=1.12,            # the ratio between the pie center and start of text label
+                                textprops={"fontsize": 8},
+                                explode=explode_list         # 'explode' lowest 3 continents
+
+                                )
+
+# scale the title up by 12% to match pctdistance
+plt.title('Immigration to Canada by Continent in 2013', y=1.05) 
+plt.axis('equal') 
+
+# add legend
+plt.legend(labels=df_continents.index, bbox_to_anchor=(1.1, -0.1), loc="lower right")
+
+# show plot
+plt.show()
