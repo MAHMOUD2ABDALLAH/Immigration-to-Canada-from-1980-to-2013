@@ -88,7 +88,3 @@ box-plot-analysis/
 ├── Subplots.png
 └── Decades 80's, 90's, 00's.png
 ```
-
-## Usage
-Run the Python script to generate all box plot visualizations and statistical summaries. 
-The analysis helps identify immigration patterns, compare country distributions, and track changes across decades.
