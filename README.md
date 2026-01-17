@@ -8,12 +8,12 @@ The dataset contains annual data on the flows of international immigrants as rec
 ## Table of Contents
 1. Exploring Dataset
 2. Indexing and Filtering
-3. Visualizing Dataset
-4. Line Plot of Dataset
-5. Area Plot of Dataset
-6. Histogram Plot of Dataset
-7. Bar chart Plot of Dataset
-8. Pie chart Plot of Dataset
-9. Box chart Plot of Dataset
-10. Scatter chart Plot of Dataset **( pending...)**
-11. Bubble chart Plot of Dataset **( pending...)**
+3. Visualizing
+4. Line Plot
+5. Area Plot
+6. Histogram Plot
+7. Bar chart Plot
+8. Pie chart Plot
+9. Box chart Plot
+10. Scatter Plot
+11. Bubble Plot
