@@ -1,94 +1,96 @@
-# 9- Box Plot  
-This branch uses **box plot visualizations** to analyze the distribution of immigration to Canada from selected countries between **1980 and 2013**.
+# 10- Scatter Plot Analysis  
+This branch uses **scatter plot visualizations** to analyze immigration trends to Canada from **1980 to 2013**, including linear regression for trend prediction.
 
 ## Key Visualizations
 
-### 1. Box Plot of Japanese Immigrants (1980–2013)
+### 1. Total Immigration to Canada (1980–2013) with Linear Trend Line
 
-<img width="600" height="400" alt="First Box Plot" src="https://github.com/user-attachments/assets/17110cb1-37c2-49a0-94bd-a7dfd207830f" />
+<img width="800" height="600" alt="Linear line" src="https://github.com/user-attachments/assets/8b542527-898f-4c62-a5fb-a307c163518f" />
 
 **Features:**
-- Visualizes the distribution of Japanese immigrants over 33 years
-- Highlights median, quartiles, and potential outliers
-- Shows relatively stable immigration numbers from Japan
+- Scatter plot showing total immigration per year (red points)
+- Green linear regression line (best fit) with equation annotation
+- Formula: `y = 556.82x - 1,092,357`
+- Predicts immigration numbers for future years
+- Shows clear upward trend in Canadian immigration
 
-### 2. Box Plots Comparing China and India (1980–2013)
-<img width="600" height="400" alt="China vs  India" src="https://github.com/user-attachments/assets/f64a17c4-ab5f-429f-b0ac-c63b7fa658a2" />
+### 2. Immigration from Denmark, Norway, and Sweden (1980–2013)
+
+<img width="800" height="600" alt="DNS" src="https://github.com/user-attachments/assets/6c81fbe4-3a85-4897-a72b-de619ff4bdee" />
 
 **Insights:**
-- India shows a wider spread and higher median immigration numbers
-- China’s distribution is more compact with fewer extreme values
-- Both countries show significant growth in immigration over time
+- Orange scatter points showing combined immigration from three Scandinavian countries
+- Visualizes yearly totals with trend line
+- Shows moderate but consistent immigration patterns
+- Highlights variability across years
 
-### 3. Horizontal Box Plot Comparison
-<img width="600" height="400" alt="Horizontal China vs  India" src="https://github.com/user-attachments/assets/e04bc6b1-8693-449e-a362-cc138b42fd29" />
+### 3. Example Immigration Scatter Plot
 
-**Alternative view providing:**
-- Clear side-by-side comparison of distributions
-- Easy reading of numerical scales
-- Visual emphasis on distribution shapes
+<img width="800" height="600" alt="First Scatter plot" src="https://github.com/user-attachments/assets/28a08ec3-0bb6-450f-a17d-dfd19fa99453" />
 
-### 4. Combined Subplots: Box Plot and Line Plot
-<img width="1506" height="600" alt="Subplots" src="https://github.com/user-attachments/assets/c9e74279-d0b0-4a12-b6f0-4e69a8f96255" />
-
-**Dual visualization showing:**
-- **Left**: Box plot distribution comparison
-- **Right**: Line plot trend over time (1980–2013)
-- China shows steady growth while India shows more volatility
-
-### 5. Top 15 Countries by Decade (1980s, 1990s, 2000s)
-<img width="800" height="600" alt="Decades 80&#39;s, 90&#39;s, 00&#39;s" src="https://github.com/user-attachments/assets/b4e7fc8f-e7f9-4535-a81b-5508177c67b1" />
-
-**Decadal analysis reveals:**
-- Increasing immigration volumes across decades
-- 2000s shows highest median and spread
-- Outliers identified in 2000s data (e.g., China, India)
+**Features:**
+- Demonstrates basic scatter plot implementation
+- Shows immigration numbers for specific years
+- Illustrates data point distribution
 
 ## Data Insights
 
 **Key Findings:**
-1. **Japan**: Consistent but modest immigration (median ~800)
-2. **China vs India**: India has higher median but China shows more consistent growth
-3. **Top 15 Countries**: Immigration volumes increased significantly in 2000s
-4. **Outliers**: China and India are outliers in 2000s data (>209,611 immigrants)
+1. **Overall Trend**: Steady increase in total immigration from 1980–2013
+2. **Linear Model**: `Immigrants = 556.82 × Year - 1,092,357`
+3. **2015 Prediction**: Approximately 280,000 immigrants
+4. **Scandinavian Countries**: Consistent but moderate immigration flow
+5. **Visual Patterns**: Clear positive correlation between year and immigration numbers
 
 ## Code Highlights
 
 ```python
-# Box plot for single country
-df_japan.plot(kind='box', figsize=(8, 6))
+# Create scatter plot with regression line
+df_tot.plot(kind='scatter', x='year', y='total', figsize=(10, 6), color='red')
 
-# Comparison box plot
-df_CI.plot(kind='box', figsize=(10, 7))
+# Linear regression using numpy
+x = df_tot['year']
+y = df_tot['total']
+fit = np.polyfit(x, y, deg=1)
+plt.plot(x, fit[0] * x + fit[1], color='green')
 
-# Decadal analysis
-new_df = pd.DataFrame({'1980s': df_80s, '1990s': df_90s, '2000s': df_00s})
-new_df.plot(kind='box', figsize=(10, 6))
+# Annotate regression equation on plot
+plt.annotate(f'y={fit[0]:.0f}x + {fit[1]:.0f}', xy=(2000, 150000))
+
+# Multi-country scatter plot
+df_countries = df_Canada.loc[['Denmark', 'Norway', 'Sweden'], years].transpose()
+df_total = pd.DataFrame(df_countries.sum(axis=1))
+df_total.plot(kind='scatter', x='year', y='total', color='orange')
 ```
 
-## Outlier Analysis
+## Regression Analysis
+
 ```python
-# Identify outliers in 2000s data
-Q1 = new_df['2000s'].quantile(0.25)
-Q3 = new_df['2000s'].quantile(0.75)
-IQR = Q3 - Q1
-outlier_threshold = Q3 + (1.5 * IQR)
-print(new_df[new_df['2000s'] > outlier_threshold])
+# Print regression equation
+print('No. Immigrants = {0:.0f} * Year + {1:.0f}'.format(fit[0], fit[1]))
+
+# Predict for 2015
+pred_2015 = fit[0] * 2015 + fit[1]
+print(f'Predicted immigrants in 2015: {pred_2015:.0f}')
+
+# Predict for 2020
+pred_2020 = fit[0] * 2020 + fit[1]
+print(f'Predicted immigrants in 2020: {pred_2020:.0f}')
 ```
 
 ## File Structure
 
 ```
-box-plot-analysis/
+scatter-plot-analysis/
 ├── README.md
-├── box-plot-analysis.py
-├── First Box Plot.png
-├── China vs. India.png
-├── Horizontal China vs. India.png
-├── Subplots.png
-└── Decades 80's, 90's, 00's.png
+├── scatter-plot-analysis.py
+├── Canada.xlsx (main data source)
+├── DNS.png (Scandinavian immigration data table)
+├── Linear line.png (Regression analysis data table)
+├── First Scatter plot.png (Example data table)
+├── requirements.txt
+└── images/
+    ├── total-immigration-scatter.png
+    ├── scandinavian-immigration-scatter.png
+    └── example-scatter-plot.png
 ```
-
-## Usage
-Run the Python script to generate all box plot visualizations and statistical summaries. 
-The analysis helps identify immigration patterns, compare country distributions, and track changes across decades.
