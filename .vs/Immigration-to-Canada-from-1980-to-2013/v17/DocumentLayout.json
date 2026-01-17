@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Mahmoud\\Downloads\\Canada MIG\\Immigration-to-Canada-from-1980-to-2013\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mahmoud\\Downloads\\Canada MIG\\Immigration-to-Canada-from-1980-to-2013\\Box-plot.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Box-plot.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mahmoud\\Downloads\\Canada MIG\\Immigration-to-Canada-from-1980-to-2013\\Scatter-plot.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scatter-plot.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,14 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Box-plot.py",
-              "DocumentMoniker": "C:\\Users\\Mahmoud\\Downloads\\Canada MIG\\Immigration-to-Canada-from-1980-to-2013\\Box-plot.py",
-              "RelativeDocumentMoniker": "Box-plot.py",
-              "ToolTip": "C:\\Users\\Mahmoud\\Downloads\\Canada MIG\\Immigration-to-Canada-from-1980-to-2013\\Box-plot.py",
-              "RelativeToolTip": "Box-plot.py",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAkwHEAAABKAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARXSURBVFhHxZdfiFR1FMc/v3vnzzqrbbvmuqWJCsk2BjW5ML0kK4TkQyEE6dMyCBeqhyR72S2I6KGIejEfhx56kLKMooxArZTMXCIXpBalpJqUTSfN3dm9d6fZ3\u002B/0cOfOztz50xW1vnC4vznn/s75/s45v3MZ\u002BD8hImHVfw4VVgRwHOdG2F0EhvP5/M9hQxgdCezduzes/lfs3r2bdDo9OTk52ROFhBVW3AyMjIykM5nMZeCY4zhrwvZ63BICALlcLlMl8aXjOKvD9gCxsKIVxsfHw6oGDA0NYdt2WE0ul8sAExMTE8ccxxnO5/MXwu9EysDQ0FBHaRU8QC6Xy6TT6RngWNjGrWrCdsjn803xmhQB6glcTwk8zwubARgdHW1JoC0cxxHXdcV1XSmVSh0leM91XfE8ryb1\u002BnZzJVIP2LbdUWKxGIlEkiuecO6Sx\u002BnCDGf/mKM4p0kkEh17pG1KopZgcHCQ05eE/Sd/4a9ZD6M1Rmu0XsBozfLuBGNPbOL898fZsWNHU7wmRYB6AlrrsLmGxJIUT\u002B47wa7N67k87fL\u002ByfNNJFJxi/3PPcKKvt6meDdcgmm3QqWygK3AUmCMwRhdFX89485TkRgisjTsOxKB8fHxtmKMYIzmrc9/4N2vf6qdflEMRmuqHdg0\u002BJpSEqBdCSzLwo7F\u002BXFqlqulMkYMc/MVRAxiBBHDqXNTnDp7EV0jscChl7ayMjXlh0ys/R37jj1KqYORCARQSlEWmxc\u002BOMNvxVLNeX2g1mvNkZfvp08fqDqKQ98eTWzFpusqQbFY5MPvLlCoBa9KqObNa42imkXRsFCC0mEbeCoSgWDmr1q1iolfrzQ4NsavcWvxbalknGWJa2AqoMtgyuCdAdgciUDQ8ZZlUfhztua4pdSdXIymp7uLN3c9SMz9yg9syj6JcgGkMhipB4JBNDw8zLbXj2C0rtbXv\u002BcP3dPPs1u7WL6kFPICSesazJ4AXfIzYCog1efad6Jdw6AEIkJ3wmo48YaB23ht\u002ByXuUu\u002BRnP\u002BsTg6RdD\u002BCmcOwML2Y\u002BiADugLWkmgEghKICOv7lzbUf1tmJco71bhBdDVIXdBa4Oo6uQ5U7FwkAsEtKBQKDN97Z0MGelIGgjEDjY0WDlqvW7YF4JNIBLLZLNlsloGBAR59YDXbMmuwlT8BCf5biOkcOPit/4buLPQ\u002BPgfsi9SE9bAsi3g8jmVVueurUHxlscFMBeJroOs\u002Bn5Ro/9m7Hezap2ASeEYpdTxSBuphjKFcLuN5HvPz876ydrrqab1JuLIfrh6Ea59C8W0wJYC1QJdSaqNS6jhRP0btICL\u002BWA3XNyDS/zTc/QaYCiIWwJRSqlzvo2MJwrpWGBsbY133xzD77eL9rpViNcR6QVl4/a8eSKVSO8P72xKIChHZCOYoM0cHmP4CvLP\u002BvVdx6NoAPVuoLH3MjSeSDyulTof33xSIyO0i8ryIfCMiJfFREpGTIvKiiCwP7wnwD7tNXzLGHmUXAAAAAElFTkSuQmCC",
-              "WhenOpened": "2026-01-13T14:58:32.322Z",
+              "Title": "Scatter-plot.py",
+              "DocumentMoniker": "C:\\Users\\Mahmoud\\Downloads\\Canada MIG\\Immigration-to-Canada-from-1980-to-2013\\Scatter-plot.py",
+              "RelativeDocumentMoniker": "Scatter-plot.py",
+              "ToolTip": "C:\\Users\\Mahmoud\\Downloads\\Canada MIG\\Immigration-to-Canada-from-1980-to-2013\\Scatter-plot.py",
+              "RelativeToolTip": "Scatter-plot.py",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAkwF4AAAAkAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANASURBVEhLtZVPaBxlGMZ/s7uTNazZMW3Y/BGxRFOkWsQU3VAPxoJ6KiKIItJDwTnkomhhK\u002BRg7En3losHFwlBRDx5KGgPHhQruhKaUChaiCbWuNrGtttunN3Z\u002Bb7v9TCb7GTI6HrwgZf55nln3ud9n\u002B9jBv5PiIgV51zXlTj3L3i0Uqksxclt7CkwPz8fp/fE7Oxs4Pv\u002BlSAIXq5UKtV4HiAVJ/4LHMexS6XSPtu2P3JdtxjP808C1Wo1MaIoFAqDEZEju5J7wXVd8Tyvp5ibm9tZr62t3ZiZmVl1Xfe\u002BaL3ECXpFuVymXC6zuLg4mE6nR4DD0XwmehNF3IooisXQ7lKptItfWFhYWllZ2cUlTlAsFveMqakpbNvG0xYb9TbrN1rcbBoymQyO42TjdRInSMJtz\u002Bedcz\u002Bwvnkbr\u002BmjlUKrgOF8ljMvPP3I8vKyHX0\u002BcYL4ydmO9bpif86m/OJkp3gYv27e4uzSL9np6emD0TqJAnFrtsMY4Zsff\u002BfUh99itMZoFV6VYstrMTAwcGe0TqIAgNYarTVWKsXSlS0\u002B/r7GhbU/efLQCEcPFnjq8Bh2GrRWaK0xxvDEZP1NaXwuElw7LyL7Evcgeorq\u002BQk\u002B\u002BHJ1x\u002B\u002BuNeHadO6NGPC\u002BDl9qXXqcoVNvJU4QteXcxVqny7DT7rrLGa2YGAYQ0C1oXQZ19dlEgSg2NhuYTqdGKdJiODCUY3w4z/hInvtHHZ47Os5LR34C5YFugvagXbs38WsatejdaoAKArQKuHuwn/dP\u002BPTLatgthNegBmoLjA\u002BmDdqHkdPJmxy1aCyfxXSsmDmWoz/4CtRvoGoQbID/MwS3Op03u1P03XMzUSCKYw\u002BN7mymc4fqJkwQWqE6haPr7ATYo5/2ZBFAM3\u002BA2vUGxx9uUpBPQgtMG/oOgZUFUeGHIZUD0nDXM9fIDD2WKBBHKpXCsiz6zGW4/l5Y3Pig2yAajECuCGOn3wbOA1XLsho9WQRgjEFrjZCWrtcdW/a/AkMnIdUPgGVZX1iW1SDpnxznonjj9dcuPVD47kHqn4Ui21PkJglGz7TtrPO8ZVln4\u002B/1DBFJi8irohor8tdFJVsXRNp/rItIVUROiMjx6PN/A\u002BOzH72MzdOgAAAAAElFTkSuQmCC",
+              "WhenOpened": "2026-01-15T07:20:04.15Z",
               "EditorCaption": ""
             }
           ]

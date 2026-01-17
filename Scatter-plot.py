@@ -37,97 +37,76 @@ df_Canada["Total"] = df_Canada.select_dtypes(include="number").sum(axis=1)
 # let's view the first five elements and see how the dataframe was changed
 print(df_Canada.head())
 
-# Let's plot the box plot for the Japanese immigrants between 1980 - 2013
-# to get a dataframe, place extra square brackets around 'Japan'.
-df_japan = df_Canada.loc[["Japan"], years].transpose()
-print(df_japan.head())
+# Using a scatter plot,
+# let's visualize the trend of total immigrantion to Canada (all countries combined) for the years 1980 - 2013.
 
-# create a box plot
-df_japan.plot(kind='box', figsize=(8, 6))
+# we can use the sum() method to get the total population per year
+df_tot = pd.DataFrame(df_Canada[years].sum(axis=0))
 
-plt.title('Box plot of Japanese Immigrants from 1980 - 2013')
+# change the years to type int (useful for regression later on)
+df_tot.index = map(int, df_tot.index)
+
+# reset the index to put in back in as a column in the df_tot dataframe
+df_tot.reset_index(inplace=True)
+
+# rename columns
+df_tot.columns = ["year", "total"]
+
+# view the final dataframe
+print(df_tot.head())
+
+# create scatter plot
+df_tot.plot(kind='scatter', x='year', y='total', figsize=(10, 6), color='red')
+
+plt.title('Total Immigration to Canada from 1980 - 2013')
+plt.xlabel('Year')
 plt.ylabel('Number of Immigrants')
 
+# plt.show()
+
+#let's try to plot a linear line of best fit, and use it to predict the number of immigrants in 2015 ( y= a * x + b).
+x = df_tot['year']      # year on x-axis
+y = df_tot['total']     # total on y-axis
+fit = np.polyfit(x, y, deg=1)
+
+print(fit)
+
+# plot line of best fit
+plt.plot(x, fit[0] * x + fit[1], color='green') # recall that x is the Years
+plt.annotate('y={0:.0f} x + {1:.0f}'.format(fit[0], fit[1]), xy=(2000, 150000))
+
 plt.show()
 
-# We can view the actual numbers
-print(df_japan.describe())
+# print out the line of best fit
+print('No. Immigrants = {0:.0f} * Year + {1:.0f}'.format(fit[0], fit[1])) 
 
-# Compare the distribution of the number of new immigrants from India and China for the period 1980 - 2013.
-df_CI= df_Canada.loc[['China', 'India'], years].transpose()
-print(df_CI.head())
+# Create a scatter plot of the total immigration from Denmark, Norway, and Sweden to Canada from 1980 to 2013
 
-# lets view the statistics
-print(df_CI.describe())
+# create df_countries dataframe
+df_countries = df_Canada.loc[['Denmark', 'Norway', 'Sweden'], years].transpose()
 
-# create a box plot
-df_CI.plot(kind='box', figsize=(10, 7))
+# create df_total by summing across three countries for each year
+df_total = pd.DataFrame(df_countries.sum(axis=1))
 
-plt.title('Box plots of Immigrants from China and India (1980 - 2013)')
+# reset index in place
+df_total.reset_index(inplace=True)
+
+# rename columns
+df_total.columns = ['year', 'total']
+
+ # change column year from string to int to create scatter plot
+df_total['year'] = df_total['year'].astype(int)
+
+# show resulting dataframe
+print(df_total.head())
+
+# generate scatter plot
+df_total.plot(kind='scatter', x='year', y='total', figsize=(10, 6), color='orange')
+
+# add title and label to axes
+plt.title('Immigration from Denmark, Norway, and Sweden to Canada from 1980 - 2013')
+plt.xlabel('Year')
 plt.ylabel('Number of Immigrants')
 
+# show plot
 plt.show()
-
-# horizontal box plots
-df_CI.plot(kind='box', figsize=(10, 7), color='blue', vert=False)
-
-plt.title('Box plots of Immigrants from China and India (1980 - 2013)')
-plt.xlabel('Number of Immigrants')
-
-plt.show()
-
-# We can then specify which subplot to place each plot by passing in the ax paramemter in plot() method as follows
-fig = plt.figure() # create figure
-
-ax0 = fig.add_subplot(1, 2, 1) # add subplot 1 (1 row, 2 columns, first plot)
-ax1 = fig.add_subplot(1, 2, 2) # add subplot 2 (1 row, 2 columns, second plot). See tip below**
-
-# Subplot 1: Box plot
-df_CI.plot(kind='box', color='blue', vert=False, figsize=(20, 6), ax=ax0) # add to subplot 1
-ax0.set_title('Box Plots of Immigrants from China and India (1980 - 2013)')
-ax0.set_xlabel('Number of Immigrants')
-ax0.set_ylabel('Countries')
-
-# Subplot 2: Line plot
-df_CI.plot(kind='line', figsize=(20, 6), ax=ax1) # add to subplot 2
-ax1.set_title ('Line Plots of Immigrants from China and India (1980 - 2013)')
-ax1.set_ylabel('Number of Immigrants')
-ax1.set_xlabel('Years')
-
-plt.show()
-
-# Create a box plot to visualize the distribution 
-# of the top 15 countries (based on total immigration) grouped by the decades 1980s, 1990s, and 2000s.
-df_top15 = df_Canada.sort_values(['Total'], ascending=False, axis=0).head(15)
-
-# create a list of all years in decades 80's, 90's, and 00's
-years_80s = list(map(str, range(1980, 1990))) 
-years_90s = list(map(str, range(1990, 2000))) 
-years_00s = list(map(str, range(2000, 2010))) 
-
-# slice the original dataframe df_can to create a series for each decade
-df_80s = df_top15.loc[:, years_80s].sum(axis=1) 
-df_90s = df_top15.loc[:, years_90s].sum(axis=1) 
-df_00s = df_top15.loc[:, years_00s].sum(axis=1)
-
-# merge the three series into a new data frame
-new_df = pd.DataFrame({'1980s': df_80s, '1990s': df_90s, '2000s':df_00s}) 
-
-print(new_df.head())
-
-print(new_df.describe())
-
-# plotting three decades
-new_df.plot(kind='box', figsize=(10, 6))
-plt.title('Immigration from top 15 countries for decades 80s, 90s and 2000s')
-plt.show()
-
-
-# After applying some calcuation about the outliers
-# outlier > Q3 + (1.5 * IQR)
-# outlier < Q1 + (1.5 * IQR)
-# After viewing visual of box plot of three decades and applied formula we found Outlier > 209,611.5 on 2000's
-# let's check how many entries fall above the outlier threshold 
-
-print(new_df[new_df['2000s']> 209611.5])
-
