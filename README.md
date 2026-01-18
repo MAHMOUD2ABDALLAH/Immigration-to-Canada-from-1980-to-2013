@@ -1,4 +1,4 @@
-# 8- Pie Group
+# 8- Pie Chart Plot
 This branch enhances pie chart visualizations to analyze immigration patterns by continent to Canada from **1980 to 2013**, including a special focus on the distribution for the year **2013**.
 
 ## Key Visualizations
