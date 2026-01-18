@@ -1,4 +1,4 @@
-# 6- Histogram Plot: Immigration to Canada
+# 6- Histogram
 
 This branch uses **histogram plots** to analyze the distribution of immigration to Canada from 195 countries, with a focus on the year **2013**.
 
