@@ -1,4 +1,4 @@
-# 10- Scatter Plot Analysis  
+# 10- Scatter Plot  
 This branch uses **scatter plot visualizations** to analyze immigration trends to Canada from **1980 to 2013**, including linear regression for trend prediction.
 
 ## Key Visualizations
