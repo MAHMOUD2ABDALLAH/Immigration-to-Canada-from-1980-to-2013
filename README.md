@@ -1,4 +1,4 @@
-# 5- Area Plot Immigration to Canada
+# 5- Area Plot
 
 This branch uses **stacked area plots** to analyze immigration patterns from:
 1. Top 5 contributing countries
