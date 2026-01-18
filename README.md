@@ -1,4 +1,4 @@
-# 4- Line Plot Immigration to Canada
+# 4- Line Plot
 
 This branch visualizes immigration trends from Haiti, China, and India using Matplotlib line plots.
 
