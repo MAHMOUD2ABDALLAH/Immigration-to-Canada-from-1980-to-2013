@@ -84,4 +84,4 @@ mexico_longitude = -102.5528
 mexico_map = folium.Map(location=[mexico_latitude, mexico_longitude], zoom_start=6, tiles='CartoDB voyager')
 
 print(mexico_map.show_in_browser())
-# world_map.save("mexico_Terrain_map_.html")
+mexico_map.save("mexico_Terrain_map_.html")
