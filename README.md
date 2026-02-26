@@ -1,4 +1,4 @@
-# 14-Regression Plot
+# 15-Regression Plot
 ## Visualizing Immigration Trends to Canada (1980-2013) with Seaborn Regression Analysis
 
 This branch demonstrates **regression plot visualizations** to analyze immigration patterns to Canada from 1980-2013, showcasing Seaborn's powerful statistical visualization capabilities with progressive enhancements in styling, formatting, and data segmentation.
