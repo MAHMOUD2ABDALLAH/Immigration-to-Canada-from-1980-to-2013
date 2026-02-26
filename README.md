@@ -18,5 +18,8 @@ The dataset contains annual data on the flows of international immigrants as rec
 10. Scatter Plot
 11. Bubble Plot
 12. Waffle Plot
-13. Wordcloud Plot
-14. Regression Plot
+13. Word Cloud Plot` - Intro
+14. Wordcloud Plot
+15. Regression Plot
+16. Foliun Plot` - Intro
+17. Maps with Markers
