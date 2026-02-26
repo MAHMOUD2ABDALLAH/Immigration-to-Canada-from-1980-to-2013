@@ -1,4 +1,4 @@
-# 16-Folium Plot Branch
+# 16-Folium Plot 
 ## Interactive Geographic Visualization of Immigration Patterns with Folium
 
 This branch demonstrates **interactive map visualizations** using Folium to explore immigration patterns and geographic data, progressively enhancing map features from basic world views to specialized terrain representations of different regions.
