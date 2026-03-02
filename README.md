@@ -1,4 +1,4 @@
-# 17-Maps and Markers Branch
+# 17-Maps with Markers
 ## Interactive Crime Incident Visualization in San Francisco with Folium Markers and Clustering
 
 This branch demonstrates **interactive crime mapping techniques** using Folium to visualize San Francisco Police Department incident data, progressively enhancing visualizations from basic markers to sophisticated clustered representations with multiple zoom levels.
