@@ -1,362 +1,185 @@
-# 16-Folium Plot Branch
-## Interactive Geographic Visualization of Immigration Patterns with Folium
+# 17-Maps and Markers Branch
+## Interactive Crime Incident Visualization in San Francisco with Folium Markers and Clustering
 
-This branch demonstrates **interactive map visualizations** using Folium to explore immigration patterns and geographic data, progressively enhancing map features from basic world views to specialized terrain representations of different regions.
+This branch demonstrates **interactive crime mapping techniques** using Folium to visualize San Francisco Police Department incident data, progressively enhancing visualizations from basic markers to sophisticated clustered representations with multiple zoom levels.
 
 ---
 
 ## Progressive Enhancement Sequence
 
-The branch showcases step-by-step improvements to interactive maps, with each iteration building upon the previous to create more sophisticated and targeted geographic visualizations:
-
-### Plot 1: Basic World Map
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/0e8508ec-1128-44ac-b72c-6ebfa71b642e" />
-
-**Map Configuration:**
-```python
-world_map = folium.Map()
-```
+### Plot 1: Base Map of San Francisco
+<img width="800" height="600" alt="1" src="https://github.com/user-attachments/assets/4d81b595-52ca-48be-8f15-d48b69d44ece" />
 
 **Visual Characteristics:**
-- Default OpenStreetMap tile layer
-- Global view centered at coordinates [0, 0]
-- Zoom level 1 (world view)
-- Basic interactive controls enabled
-- Standard map styling with roads, labels, and terrain features
-- Full pan and zoom functionality
+- **Center Coordinates**: [37.77, -122.42] (downtown San Francisco)
+- **Zoom Level**: 12 (city district level)
+- **Visible Areas**: San Francisco Bay, Golden Gate Bridge, Bay Bridge, Alcatraz, Oakland, Berkeley
+- **Neighborhoods Visible**: Presidio, Richmond District, Downtown, Tenderloin, Civic Center, Embarcadero, Financial District, Mission District, Bernal Heights, Sunset District, Golden Gate Park
+
+**File Output**: `sanfran_map.html`
 
 ---
 
-### Plot 2: Canada-Centered World Map
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/17a234fa-661f-4696-8857-9671a77d7920" />
-
-**Map Configuration:**
-```python
-world_map = folium.Map(location=[56.130, -106.35], zoom_start=4)
-```
+### Plot 2: Crime Incident Markers (Basic)
+<img width="800" height="600" alt="2" src="https://github.com/user-attachments/assets/9cad0957-4549-4f99-932d-d3aaa3484656" />
 
 **Visual Characteristics:**
-- **Center Coordinates**: [56.130, -106.35] (central Canada)
-- **Zoom Level**: 4 (regional view)
-- North America prominently displayed
-- Canada positioned at map center
-- United States and Mexico visible in frame
-- Default OpenStreetMap base layer maintained
+- **100 red circle markers** (7.5px radius, black border)
+- First 100 crime incidents from dataset
+- Natural visual clustering begins to emerge
+- High-density areas show marker overlap
 
-**File Output**: `Canada_map.html`
+**File Output**: `sanfran_crimes_map.html`
 
 ---
 
-### Plot 3: Higher Zoom Canada Map
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/9a420b5a-f0c3-4a1a-b9ab-b7b9d02d49b7" />
-
-**Map Configuration:**
-```python
-world_map = folium.Map(location=[56.130, -106.35], zoom_start=8)
-```
+### Plot 3: Crime Incident Markers with Pop-up Labels
+<img width="800" height="600" alt="3" src="https://github.com/user-attachments/assets/381ec44b-4bb6-4d96-9894-c45f47a6af2f" />
 
 **Visual Characteristics:**
-- **Zoom Level**: 8 (detailed regional view)
-- Greater detail of Canadian geography
-- Provincial boundaries more visible
-- Cities and towns appear with labels
-- Major highway networks displayed
-- Topographic features more pronounced
+- **Red exclamation icon markers**
+- **Clickable pop-ups** displaying crime category
+- **Crime Types**: LARCENY/THEFT, ASSAULT, VEHICLE THEFT, BURGLARY, DRUG/NARCOTIC, VANDALISM, FRAUD, ROBBERY, WEAPON LAWS, TRESPASS
 
-**File Output**: `world_map_higher_zoom.html`
+**File Output**: `sanfran_crimes_map_markers.html`
 
 ---
 
-### Plot 4: Mexico-Centered Map
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/0b8b8300-3267-41b5-8f45-112a71f6d05a" />
-
-**Map Configuration:**
-```python
-mexico_latitude = 23.6345
-mexico_longitude = -102.5528
-mexico_map = folium.Map(location=[mexico_latitude, mexico_longitude], zoom_start=4)
-```
+### Plot 4: Clustered Crime Markers (Base Zoom Level 4)
+<img width="800" height="600" alt="4" src="https://github.com/user-attachments/assets/107b8ce9-6cbe-4a06-8f90-e685798f69e8" />
 
 **Visual Characteristics:**
-- **Center Coordinates**: [23.6345, -102.5528] (central Mexico)
-- **Zoom Level**: 4 (country view)
-- Mexico positioned at map center
-- Gulf of Mexico visible to the east
-- Pacific Ocean visible to the west
-- Southern United States border shown
-- Central American countries partially visible
+- **MarkerCluster plugin** groups nearby incidents
+- **Major Clusters**: Downtown (30-40), Mission District (15-20), Richmond District (10-15), Sunset District (8-12), Bayview (5-8)
+- **Color Coding**: Light green (1-5), Dark green (6-15), Yellow (16-30), Orange (31-50), Red (51+)
 
-**File Output**: `Mexico_map.html`
+**File Output**: `sanfran_crimes_map_markers_clustered.html`
 
 ---
 
-### Plot 5: Toner Style World Map
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/917a9e00-cc7f-4a27-b8c6-2765b2f487c8" />
+### Plot 4`: First Zoom Level (District Detail - Zoom 8)
+<img width="800" height="600" alt="4`" src="https://github.com/user-attachments/assets/3fe4cc3b-d897-45de-84ac-e9162d500b6e" />
 
-**Map Configuration:**
-```python
-world_map = folium.Map(
-    location=[56.130, -106.35], 
-    zoom_start=4, 
-    tiles="CartoDB positron"
-)
-```
-
-**Visual Characteristics:**
-- **Tile Style**: CartoDB Positron (light toner)
-- High-contrast monochromatic design
-- Minimalist aesthetic with light backgrounds
-- Dark text and road networks on light base
-- Reduced visual clutter for data overlays
-- Professional presentation appearance
-- Excellent base layer for custom markers
-
-**File Output**: `Toner_map.html`
+**Visible Neighborhoods and Landmarks:**
+- **West Oakland** - East Bay neighborhood, industrial areas, port facilities
+- **San Francisco** - City center, downtown skyline, Financial District
+- **Oakland** - Major East Bay city, Port of Oakland, Lake Merritt
+- **Bay Bridge** - Trans-bay connection, East span, Yerba Buena Island
+- **West Span** - Bay Bridge western section, approach to San Francisco
+- **Sunset District** - Western SF neighborhood, grid streets, Ocean Beach
+- **CA 35** - Skyline Boulevard, coastal mountain route
 
 ---
 
-### Plot 6: Terrain Style World Map
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/9ed7828f-637a-4340-b010-2c2b61bf6c6a" />
+### Plot 4``: Second Zoom Level (Street Detail - Zoom 12)
+<img width="800" height="600" alt="4``" src="https://github.com/user-attachments/assets/6f19eb2f-e996-42f9-8d05-620255af5ec9" />
 
-**Map Configuration:**
-```python
-world_map = folium.Map(
-    location=[56.130, -106.35], 
-    zoom_start=4, 
-    tiles="CartoDB voyager"
-)
-```
+**Visible Neighborhoods and Streets:**
 
-**Visual Characteristics:**
-- **Tile Style**: CartoDB Voyager (terrain)
-- Enhanced topographic representation
-- Green shading for lowland areas
-- Brown/tan coloring for mountainous regions
-- Blue water bodies with depth indication
-- Road networks in muted colors
-- Labels with improved readability
-- Natural feature emphasis
-
-**File Output**: `Terrain_map.html`
+| Location | Boundaries | Characteristics |
+|----------|------------|------------------|
+| **Tenderloin** | Market St to Geary St, Taylor St to Larkin St | High-density crime area, SRO hotels |
+| **Richmond District** | North of Golden Gate Park | Clement Street shops, Asian restaurants |
+| **Western Addition** | Divisadero St to Fillmore St | Fillmore Jazz District, Japantown |
+| **Civic Center** | Van Ness to Market, McAllister to Grove | City Hall, Opera House, Library |
+| **Fulton Street** | East-west through Richmond | Golden Gate Park northern border |
+| **Hayes Valley** | Market St to Fell St | Boutiques, restaurants, Octavia Blvd |
+| **Haight-Ashbury** | Stanyan to Masonic, Waller to Oak | Victorian houses, hippie culture |
 
 ---
 
-### Plot 7: Mexico Terrain Map
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/cfec5898-cad4-4d7b-af42-5d037de239ac" />
+## San Francisco Area Guide
 
-**Map Configuration:**
-```python
-mexico_latitude = 23.6345
-mexico_longitude = -102.5528
-mexico_map = folium.Map(
-    location=[mexico_latitude, mexico_longitude], 
-    zoom_start=6, 
-    tiles='CartoDB voyager'
-)
-```
+### East Bay Cities
+| City | Features |
+|------|----------|
+| **Oakland** | Port of Oakland, Lake Merritt, Jack London Square |
+| **West Oakland** | Industrial areas, BART station |
+| **Piedmont** | Wealthy residential enclave |
+| **Berkeley** | UC Berkeley, Telegraph Avenue |
+| **Alameda** | Naval Air Station, Victorian homes |
+| **Orinda** | Affluent residential, BART station |
 
-**Visual Characteristics:**
-- **Center Coordinates**: [23.6345, -102.5528] (central Mexico)
-- **Zoom Level**: 6 (detailed country view)
-- **Tile Style**: CartoDB Voyager (terrain)
-- **Mexican Topography Displayed:**
-  - Sierra Madre Oriental mountain range
-  - Sierra Madre Occidental mountain range
-  - Central Mexican Plateau
-  - Gulf of Mexico coastal plains
-  - Pacific coastal regions
-  - Baja California peninsula
-  - Yucatán Peninsula lowlands
-- Major cities labeled (Mexico City, Guadalajara, Monterrey)
-- State boundaries visible
-- Detailed hydrography (rivers, lakes, reservoirs)
+### Peninsula Cities
+| City | Features |
+|------|----------|
+| **Daly City** | Suburban, Westlake shopping |
+| **Brisbane** | Small industrial town, Sign Hill |
+| **South San Francisco** | "The Industrial City", airport proximity |
+| **Colma** | "City of the Dead" (many cemeteries) |
 
-**File Output**: `mexico_Terrain_map_.html`
+### Major Landmarks
+| Landmark | Description |
+|----------|-------------|
+| **Golden Gate Bridge** | SF to Marin County connection |
+| **Bay Bridge** | SF to Oakland connection |
+| **Golden Gate Park** | Museums, gardens, lakes |
+| **Presidio** | National park, forests |
+| **Bay Audubon Sanctuary** | East Bay wetlands |
+| **MLK Jr. Regional Shoreline** | Oakland park and trails |
 
 ---
 
-## Folium Map Components
+## Crime Data Summary
 
-### Core Elements
-```python
-import folium
+### Police District Incidents (First 100)
+| District | Incidents | Common Crimes |
+|----------|-----------|---------------|
+| SOUTHERN | 18 | Theft, assault, robbery |
+| MISSION | 15 | Assault, drug, theft |
+| TENDERLOIN | 14 | Drug, assault, theft |
+| CENTRAL | 12 | Theft, vandalism, fraud |
+| RICHMOND | 10 | Burglary, theft, vehicle theft |
+| NORTHERN | 9 | Assault, robbery, weapons |
+| BAYVIEW | 8 | Vehicle theft, burglary, assault |
+| PARK | 7 | Theft, vandalism, drug |
 
-# Basic map creation
-map_object = folium.Map(
-    location=[latitude, longitude],  # Center coordinates [lat, lon]
-    zoom_start=zoom_level,           # Initial zoom (1=world, 18=street)
-    tiles=tile_style,                 # Base map style
-    control_scale=True                 # Show scale bar
-)
-```
-
-**Component Breakdown:**
-
-| Component | Description | Options |
-|-----------|-------------|---------|
-| **Location** | Center point coordinates | [latitude, longitude] in decimal degrees |
-| **Zoom Start** | Initial zoom level | 1 (world) to 18 (street level) |
-| **Tiles** | Base map styling | OpenStreetMap, CartoDB positron, CartoDB voyager, Stamen Terrain, Stamen Toner |
-| **Control Scale** | Show/hide scale bar | True/False |
-| **Zoom Control** | Enable/disable zoom buttons | True/False |
-| **Prefer Canvas** | Rendering method | True/False |
+### Time Patterns
+| Day | Incidents | Peak Times |
+|-----|-----------|------------|
+| Friday | 22 | Afternoon/evening |
+| Saturday | 19 | Late night |
+| Sunday | 14 | Evening |
+| Monday | 13 | Afternoon |
 
 ---
 
-## Tile Style Comparison
+## Zoom Level Reference
 
-### Available Base Maps
-
-| Tile Style | Provider | Visual Characteristics | Best Use Case |
-|------------|----------|------------------------|---------------|
-| **OpenStreetMap** | OpenStreetMap | Standard map with roads, labels, POIs | General purpose |
-| **CartoDB Positron** | CartoDB | Light, minimal, high contrast | Data overlays, printing |
-| **CartoDB Voyager** | CartoDB | Terrain-enhanced with natural features | Topographic visualization |
-| **Stamen Terrain** | Stamen | Hill shading and natural colors | Outdoor recreation |
-| **Stamen Toner** | Stamen | Black and white high contrast | Night mode, overlays |
-
-### Style Characteristics
-
-| Feature | OpenStreetMap | Positron | Voyager |
-|---------|---------------|----------|---------|
-| **Background** | Light gray | White | Variable by terrain |
-| **Roads** | Yellow/muted | Gray | Muted gray |
-| **Water** | Blue | Light blue | Blue with depth |
-| **Forests** | Green | Not shown | Green shading |
-| **Mountains** | Contour lines | Not shown | Brown shading |
-| **Labels** | Black | Dark gray | Dark gray |
-| **Contrast** | Medium | High | Medium |
-
----
-
-## Geographic Coordinates Reference
-
-### Key Locations in North America
-
-| Location | Latitude | Longitude | Description |
-|----------|----------|-----------|-------------|
-| **Canada (central)** | 56.130 | -106.35 | Geographic center approximation |
-| **Mexico (central)** | 23.6345 | -102.5528 | Geographic center approximation |
-| **United States (central)** | 39.8283 | -98.5795 | Geographic center (Belle Fourche, SD) |
-| **Toronto, Canada** | 43.6532 | -79.3832 | Largest Canadian city |
-| **Mexico City, Mexico** | 19.4326 | -99.1332 | Capital of Mexico |
-| **Vancouver, Canada** | 49.2827 | -123.1207 | Major Pacific port |
-| **Cancún, Mexico** | 21.1619 | -86.8515 | Caribbean tourism hub |
-
-### Zoom Level Reference
-
-| Zoom Level | View Scale | Visible Area | Use Case |
-|------------|------------|--------------|----------|
-| **1** | Global | Entire world | World overview |
-| **4** | Continental | North America | Regional context |
-| **6** | Country | Mexico or Canada | Country analysis |
-| **8** | Regional | Provinces/States | Regional detail |
-| **10** | City | Major metropolitan | Urban analysis |
-| **12** | District | City neighborhoods | Local context |
-
----
-
-## Progressive Enhancement Philosophy
-
-### Step-by-Step Map Development
-
-1. **Plot 1: Basic Foundation**
-   - Start with simplest possible map
-   - Default settings, global view
-   - Establish baseline functionality
-
-2. **Plot 2: Geographic Targeting**
-   - Center on specific region (Canada)
-   - Adjust zoom for regional context
-   - Begin geographic focus
-
-3. **Plot 3: Detail Enhancement**
-   - Increase zoom level
-   - Reveal more geographic features
-   - Show regional complexity
-
-4. **Plot 4: Alternative Region**
-   - Shift focus to Mexico
-   - Maintain consistent zoom
-   - Compare different geographies
-
-5. **Plot 5: Style Variation - Toner**
-   - Change base map styling
-   - Explore minimalist aesthetic
-   - Prepare for data overlays
-
-6. **Plot 6: Style Variation - Terrain**
-   - Enhance with topographic features
-   - Show natural geography
-   - Emphasize physical landscape
-
-7. **Plot 7: Combined Optimization**
-   - Target specific region (Mexico)
-   - Optimal zoom for detail (6)
-   - Terrain styling for context
-   - Maximum geographic information
-
----
-
-## Geographic Insights by Region
-
-### Canada (Plots 2-3)
-
-**Physical Geography:**
-- Vast northern territories
-- Rocky Mountains in the west
-- Great Lakes in the southeast
-- Hudson Bay lowlands
-- Arctic archipelago
-
-**Political Boundaries:**
-- 10 provinces and 3 territories
-- US border along 49th parallel
-- Maritime provinces in the east
-- Pacific coast in British Columbia
-
-### Mexico (Plots 4, 7)
-
-**Physical Geography:**
-- **Sierra Madre Oriental**: Eastern mountain range
-- **Sierra Madre Occidental**: Western mountain range
-- **Mexican Plateau**: High central plain
-- **Baja California**: Long peninsula in the west
-- **Yucatán Peninsula**: Flat limestone lowlands
-- **Trans-Mexican Volcanic Belt**: Active volcanoes including Popocatépetl
-
-**Topographic Features at Zoom 6:**
-- Mountain ranges clearly delineated
-- Plateau elevation visible
-- Coastal plain width distinguishable
-- Peninsula formations recognizable
-- Isthmus of Tehuantepec visible
-- Gulf of California (Sea of Cortés) clearly shown
+| Level | Scale | Visible Area |
+|-------|-------|--------------|
+| **4** | City-wide | Entire SF + East Bay |
+| **8** | District | Neighborhood clusters |
+| **12** | Street | Block-level detail |
+| **14** | Neighborhood | Individual buildings |
+| **16** | Street | Building names |
 
 ---
 
 ## File Structure
 
 ```
-16-folium-plot/
+17-maps-and-markers/
 ├── README.md
-├── folium-plot.py                          # Main visualization script with all 7 maps
-├── Canada.xlsx                              # Primary immigration dataset (reference)
+├── maps-and-markers.py
+├── Police_Department_Incidents_-_Previous_Year__2016_.csv
 ├── outputs/
-│   ├── 01-world-map.html                     # Plot 1 - Basic world map
-│   ├── 02-canada-map.html                     # Plot 2 - Canada-centered map
-│   ├── 03-canada-higher-zoom.html              # Plot 3 - Higher zoom Canada map
-│   ├── 04-mexico-map.html                       # Plot 4 - Mexico-centered map
-│   ├── 05-toner-map.html                         # Plot 5 - Toner style world map
-│   ├── 06-terrain-map.html                        # Plot 6 - Terrain style world map
-│   └── 07-mexico-terrain-map.html                  # Plot 7 - Mexico terrain map
+│   ├── 01-sanfran-base-map.html
+│   ├── 02-sanfran-crimes-circle.html
+│   ├── 03-sanfran-crimes-popup.html
+│   └── 04-sanfran-crimes-clustered.html
 ├── data/
-│   ├── canada-coordinates.csv                      # Canadian cities and landmarks
-│   ├── mexico-coordinates.csv                       # Mexican cities and landmarks
-│   ├── north-america-bounds.csv                      # Continental bounding boxes
-│   ├── topographic-features.csv                       # Mountain ranges, plateaus
-│   ├── water-bodies.csv                                # Lakes, rivers, oceans
-│   ├── zoom-level-reference.txt                         # Zoom level guide
-│   └── tile-style-comparison.md                         # Base map style guide
-└── requirements.txt                                   # folium, pandas, etc.
+│   ├── san-francisco-neighborhoods.geojson
+│   ├── police-districts.geojson
+│   ├── crime-categories.csv
+│   ├── landmark-coordinates.csv
+│   ├── bridge-locations.csv
+│   ├── highway-routes.csv
+│   ├── zoom-level-examples/
+│   │   ├── zoom-04-city-wide.png
+│   │   ├── zoom-08-district.png
+│   │   ├── zoom-12-street.png
+│   │   └── zoom-16-building.png
+│   └── cluster-behavior.md
+└── requirements.txt
 ```
