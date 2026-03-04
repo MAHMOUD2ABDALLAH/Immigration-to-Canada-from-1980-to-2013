@@ -23,3 +23,4 @@ The dataset contains annual data on the flows of international immigrants as rec
 15. Regression Plot
 16. Folium Geospacial Plot` - Intro
 17. Maps with Markers
+18. Choropleth plot
