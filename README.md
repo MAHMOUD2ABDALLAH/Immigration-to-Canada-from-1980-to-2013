@@ -1,453 +1,341 @@
-# 15-Regression Plot
-## Visualizing Immigration Trends to Canada (1980-2013) with Seaborn Regression Analysis
+# 18-Choropleth
+## Interactive Choropleth Visualization of Global Immigration Patterns to Canada
 
-This branch demonstrates **regression plot visualizations** to analyze immigration patterns to Canada from 1980-2013, showcasing Seaborn's powerful statistical visualization capabilities with progressive enhancements in styling, formatting, and data segmentation.
+This branch demonstrates **choropleth mapping techniques** using Folium to visualize immigration patterns to Canada from 1980 to 2013, creating an interactive color-coded world map that reveals global migration trends.
 
 ---
 
-## Progressive Enhancement Sequence
+## Progressive Visualization
 
-The branch demonstrates step-by-step improvements to regression plots, with each iteration building upon the previous:
-
-### Plot 1: Basic Regression Plot
-<img width="600" height="500" alt="First regplot" src="https://github.com/user-attachments/assets/9f830c63-ad41-4b4c-b85e-015a98819f94" />
-
-**Data Source**: Primary dataset (Total Immigration to Canada)
-```
-Year    Total Immigration
-1980    58000
-1981    62000
-1982    65000
-1983    68000
-1984    70000
-1985    72000
-1986    75000
-1987    78000
-1988    80000
-1989    82000
-1990    85000
-...     ...
-2010    126000
-```
+### Plot 1: Global Immigration Choropleth Map
+<img width="2235" height="1255" alt="Screenshot 2026-03-04 022010" src="https://github.com/user-attachments/assets/cb621b82-a3a7-4801-9055-d14ae998c54c" />
 
 **Visual Characteristics:**
-- Default Seaborn styling with blue color scheme
-- Automatic marker sizing for scatter points
-- Standard matplotlib font sizes throughout
-- Regression line with 95% confidence interval
-- Basic axis labels derived from column names
+- **Base Map**: World map centered at [0, 0] with zoom level 2
+- **Color Scheme**: YlOrRd (Yellow-Orange-Red) sequential palette
+- **Fill Opacity**: 0.7 for country polygons
+- **Line Opacity**: 0.2 for country borders
+- **Legend Title**: "Immigration to Canada"
+- **Time Period**: 1980-2013 cumulative immigration totals
+
+**Color Intensity Legend:**
+
+| Color | Immigration Range | Interpretation |
+|-------|-------------------|----------------|
+| Light Yellow | 0 - 115,318 | Low immigration |
+| Yellow | 115,318 - 230,635 | Low-medium immigration |
+| Light Orange | 230,635 - 345,953 | Medium immigration |
+| Orange | 345,953 - 461,270 | Medium-high immigration |
+| Dark Orange | 461,270 - 576,587 | High immigration |
+| Red | 576,587 - 691,904 | Very high immigration |
+| Dark Red | 691,904+ | Highest immigration |
+
+**Legend Scale:**
+<img width="400" height="60" alt="Color Scale" src="https://github.com/user-attachments/assets/[replace-with-actual-image-id]" />
+
+```
+115,318    230,635    345,953    461,270    576,587    691,904
+   └──────────┴──────────┴──────────┴──────────┴──────────┘
+   Light Yellow ──────────────────────────────→ Dark Red
+```
 
 ---
 
-### Plot 2: Color Customization
-<img width="600" height="500" alt="Colorize regplot" src="https://github.com/user-attachments/assets/718aa538-0755-4f24-853c-417bf58c7a0c" />
+## Top Immigration Countries (1980-2013)
 
-**Data Source**: Primary dataset (Total Immigration to Canada)
+### Highest Immigration Sources
 
-**Visual Characteristics:**
-- Regression line changed to green for better visual distinction
-- Confidence interval shading also in matching green
-- Consistent color theme establishing visual identity
-- All other elements maintain default styling
+| Rank | Country | Total Immigrants | Continent | Color on Map |
+|------|---------|------------------|-----------|--------------|
+| **1** | India | 691,904 | Asia | Dark Red |
+| **2** | China | 691,904 | Asia | Dark Red |
+| **3** | Philippines | 691,904 | Asia | Dark Red |
+| **4** | Pakistan | 345,953 - 461,270 | Asia | Orange |
+| **5** | United Kingdom | 345,953 - 461,270 | Europe | Orange |
+| **6** | United States | 345,953 - 461,270 | North America | Orange |
+| **7** | Iran | 230,635 - 345,953 | Asia | Light Orange |
+| **8** | South Korea | 230,635 - 345,953 | Asia | Light Orange |
+| **9** | Sri Lanka | 230,635 - 345,953 | Asia | Light Orange |
+| **10** | France | 115,318 - 230,635 | Europe | Yellow |
 
----
+### Regional Patterns
 
-### Plot 3: Marker Customization
-<img width="600" height="500" alt="Markering regplot" src="https://github.com/user-attachments/assets/0b6bac54-8741-4822-88fe-cf4f38ebb1d3" />
+**Asia (Highest Immigration):**
+- India, China, Philippines (Dark Red - 690K+)
+- Pakistan, Iran, South Korea, Sri Lanka (Orange/Light Orange - 230K-460K)
+- Vietnam, Lebanon, Bangladesh (Yellow - 115K-230K)
 
-**Data Source**: Grid dataset
-```
-Year    Total Immigration
-1980    58000
-1981    62000
-1982    65000
-1983    68000
-1984    70000
-1985    72000
-1986    75000
-1987    78000
-1988    80000
-1989    82000
-1990    85000
-1991    88000
-1992    90000
-1993    92000
-1994    94000
-1995    96000
-1996    98000
-1997    100000
-1998    102000
-1999    104000
-2000    106000
-2001    108000
-2002    110000
-2003    112000
-2004    114000
-2005    116000
-2006    118000
-2007    120000
-2008    122000
-2009    124000
-2010    126000
-```
+**Europe (Medium-High Immigration):**
+- United Kingdom (Orange - 345K-460K)
+- France, Poland, Portugal (Yellow - 115K-230K)
+- Germany, Italy, Netherlands (Light Yellow - <115K)
 
-**Visual Characteristics:**
-- Plus sign (`+`) markers replace default circular points
-- Improved visibility for individual data points
-- Green color scheme maintained from previous step
-- Better distinction between overlapping points
+**Americas (Variable Immigration):**
+- United States (Orange - 345K-460K)
+- Jamaica, Mexico, Colombia (Yellow - 115K-230K)
+- Haiti, Guyana, Trinidad (Light Yellow - <115K)
+
+**Africa (Emerging Immigration):**
+- Egypt, Morocco, Algeria (Light Yellow - <115K)
+- South Africa, Somalia, Ethiopia (Light Yellow - <115K)
+- Most sub-Saharan countries (Light Yellow - <50K)
 
 ---
 
-### Plot 4: Figure Size Adjustment
-<img width="800" height="700" alt="Enlarge regplot" src="https://github.com/user-attachments/assets/6da45efe-81ee-4187-8ad6-eb2e490a7668" />
+## Geographic Patterns Analysis
 
-**Data Source**: Ticks dataset
-```
-Year    Total Immigration
-1980    65000
-1981    70000
-1982    75000
-1983    80000
-1984    85000
-1985    90000
-1986    95000
-1987    100000
-1988    105000
-1989    110000
-1990    115000
-1991    120000
-1992    125000
-1993    130000
-1994    135000
-1995    140000
-1996    145000
-1997    150000
-1998    155000
-1999    160000
-2000    165000
-2001    170000
-2002    175000
-2003    180000
-2004    185000
-2005    190000
-2006    195000
-2007    200000
-2008    205000
-2009    210000
-2010    215000
-```
+### Continental Distribution
 
-**Visual Characteristics:**
-- Explicit figure sizing set to 12 inches wide by 8 inches tall
-- Improved spatial distribution of data points
-- Better aspect ratio optimized for time series visualization
-- Reduced crowding of elements within the plotting area
+| Continent | Immigration Pattern | Notable Countries |
+|-----------|--------------------|-------------------|
+| **Asia** | Highest overall | India, China, Philippines (690K+) |
+| **Europe** | Medium-high | UK, France, Poland |
+| **North America** | Medium | US, Jamaica, Mexico |
+| **South America** | Low-medium | Colombia, Peru, Brazil |
+| **Africa** | Low | Egypt, Morocco, South Africa |
+| **Oceania** | Low | Australia, New Zealand |
+
+### Major Sending Regions
+
+**South Asia Corridor:**
+- India (690K+)
+- Pakistan (345K-460K)
+- Sri Lanka (230K-345K)
+- Bangladesh (115K-230K)
+
+**East Asia Corridor:**
+- China (690K+)
+- Philippines (690K+)
+- South Korea (230K-345K)
+- Vietnam (115K-230K)
+
+**Middle East Corridor:**
+- Iran (230K-345K)
+- Lebanon (115K-230K)
+- Syria (50K-115K)
+- Iraq (50K-115K)
+
+**European Corridor:**
+- United Kingdom (345K-460K)
+- France (115K-230K)
+- Poland (115K-230K)
+- Portugal (115K-230K)
 
 ---
 
-### Plot 5: Marker Size and Labels
-<img width="800" height="700" alt="Scale regplot" src="https://github.com/user-attachments/assets/8e6edbe2-ce88-47fe-a581-b8e2720bd257" />
+## Dataset Information
 
-**Data Source**: Fontsize dataset
-```
-Year    Total Immigration
-1980    55000
-1981    65000
-1982    75000
-1983    80000
-1984    85000
-1985    95000
-1986    100000
-1987    105000
-1988    110000
-1989    115000
-1990    120000
-1991    125000
-1992    130000
-1993    135000
-1994    140000
-1995    145000
-1996    150000
-1997    155000
-1998    160000
-1999    165000
-2000    170000
-2001    175000
-2002    180000
-2003    185000
-2004    190000
-2005    195000
-2006    200000
-2007    205000
-2008    210000
-2009    215000
-2010    220000
-2011    225000
-```
+### Data Source
 
-**Visual Characteristics:**
-- Marker size increased to 100 points for enhanced visibility
-- Explicit x-axis label: "Year" for clarity
-- Explicit y-axis label: "Total Immigration" for context
-- Descriptive title: "Total Immigration to Canada from 1980 - 2013"
-- Complete contextual information surrounding the visualization
+| Attribute | Description |
+|-----------|-------------|
+| **Dataset** | International migration data to Canada |
+| **Source** | Official Canadian immigration statistics |
+| **Time Period** | 1980 - 2013 (33 years) |
+| **Countries** | 195 nations |
+| **Variables** | Annual immigration counts by country |
+
+### Data Processing
+
+**Original Columns:**
+- OdName → **Country** (renamed)
+- AreaName → **Continent** (renamed)
+- RegName → **Region** (renamed)
+- AREA, REG, DEV, Type, Coverage → **Dropped**
+
+**Derived Columns:**
+- **Total** = Sum of all years (1980-2013)
+
+### Sample Data (First 5 Countries)
+
+| Country | Continent | Region | Total | Color Class |
+|---------|-----------|--------|-------|-------------|
+| Afghanistan | Asia | Southern Asia | 11,260 | Light Yellow |
+| Albania | Europe | Southern Europe | 4,078 | Light Yellow |
+| Algeria | Africa | Northern Africa | 22,688 | Light Yellow |
+| American Samoa | Oceania | Polynesia | 6 | Light Yellow |
+| Andorra | Europe | Southern Europe | 15 | Light Yellow |
 
 ---
 
-### Plot 6: Font Scale Adjustment
-<img width="800" height="700" alt="Fontsize regplot" src="https://github.com/user-attachments/assets/e8c46297-897a-426e-b9d6-97e09b8c753d" />
+## Choropleth Map Components
 
-**Data Source**: Scale dataset
-```
-Total Immigration to Canada from 1980 - 2013
-Year labels: 1980, 1985, 1990, 1995, 2000, 2005, 2010
-Value range: 50000 to 250000
-```
+### Visual Elements
 
-**Visual Characteristics:**
-- Global font scaling factor set to 1.5 for all text elements
-- Improved readability of axis labels and title
-- Larger tick labels for easier interpretation
-- Consistent typography enhancement throughout the plot
-- All previous styling elements maintained
+| Component | Description | Settings |
+|-----------|-------------|----------|
+| **Base Map** | OpenStreetMap tiles | Default Folium base |
+| **GeoJSON Layer** | World country boundaries | `world_countries.json` |
+| **Data Binding** | Country names to polygons | `key_on="feature.properties.name"` |
+| **Color Scale** | Sequential color scheme | `fill_color="YlOrRd"` |
+| **Fill Opacity** | Transparency of country fills | `fill_opacity=0.7` |
+| **Border Opacity** | Transparency of country boundaries | `line_opacity=0.2` |
+| **Legend** | Color intensity guide | "Immigration to Canada" |
 
----
+### Color Scheme: YlOrRd (Yellow-Orange-Red)
 
-### Plot 7: Ticks Style Implementation
-<img width="800" height="700" alt="Ticks regplot" src="https://github.com/user-attachments/assets/1b96764d-19d5-4ab6-8d4d-1e522979700f" />
-
-**Data Source**: Enlarge dataset
-```
-Year labels: 1980, 1985, 1990, 1995, 2000, 2005, 2010
-Value range: 50000 to 250000
-```
-
-**Visual Characteristics:**
-- `ticks` style applied removing top and right spines
-- Clean, minimalist appearance reducing visual clutter
-- Focus directed primarily to the data and regression line
-- Maintained all previous enhancements (color, markers, size, labels, font scale)
+| Hex Code | Color Name | Value Range |
+|----------|------------|-------------|
+| #FFFFB2 | Light Yellow | 0 - 115,318 |
+| #FED976 | Yellow | 115,318 - 230,635 |
+| #FEB24C | Light Orange | 230,635 - 345,953 |
+| #FD8D3C | Orange | 345,953 - 461,270 |
+| #FC4E2A | Dark Orange | 461,270 - 576,587 |
+| #E31A1C | Red | 576,587 - 691,904 |
+| #B10026 | Dark Red | 691,904+ |
 
 ---
 
-### Plot 8: Whitegrid Style
-<img width="800" height="700" alt="Grid regplot" src="https://github.com/user-attachments/assets/ed339c78-d7b1-490b-a42e-a14e4ed40eff" />
+## Geographic Highlights by Region
 
-**Data Source**: Markering dataset
-```
-Year    Total
-1980    58000
-1981    62000
-1982    65000
-1983    55000
-1984    50000
-1985    48000
-1986    45000
-1987    40000
-1988    35000
-1989    30000
-1990    25000
-1991    20000
-1992    15000
-1993    12000
-1994    10000
-1995    8000
-1996    7000
-1997    6000
-1998    5000
-1999    4000
-2000    3000
-2001    2500
-2002    2000
-2003    1500
-2004    1000
-2005    800
-2006    700
-2007    600
-2008    500
-2009    400
-2010    350
-2011    300
-```
+### Asia (Dominant Sending Region)
 
-**Visual Characteristics:**
-- `whitegrid` style applied with visible grid lines
-- Enhanced readability for estimating exact values
-- Professional publication-ready appearance
-- Grid lines aid in tracking values across the time series
-- All previous styling enhancements preserved
+| Subregion | Pattern | Key Countries |
+|-----------|---------|---------------|
+| **South Asia** | Very High | India (690K+), Pakistan (345K-460K) |
+| **East Asia** | Very High | China (690K+), South Korea (230K-345K) |
+| **Southeast Asia** | Very High | Philippines (690K+), Vietnam (115K-230K) |
+| **Middle East** | Medium | Iran (230K-345K), Lebanon (115K-230K) |
+| **Central Asia** | Low | Kazakhstan, Uzbekistan (<50K) |
 
----
+### Europe (Moderate Sending Region)
 
-### Plot 9: Scandinavian Country Analysis
-<img width="800" height="700" alt="Scandinavian regplot" src="https://github.com/user-attachments/assets/b0527445-2dce-43dd-8366-f11b4ee65eba" />
+| Subregion | Pattern | Key Countries |
+|-----------|---------|---------------|
+| **Western Europe** | Medium-High | UK (345K-460K), France (115K-230K) |
+| **Southern Europe** | Medium | Portugal (115K-230K), Italy (50K-115K) |
+| **Eastern Europe** | Medium | Poland (115K-230K), Ukraine (50K-115K) |
+| **Northern Europe** | Low-Medium | Ireland, Sweden (<115K) |
 
-**Data Source**: Scandinavian countries subset (Colorize dataset)
-```
-Year    Total Immigration (Denmark, Norway, Sweden combined)
-1980    450
-1981    460
-1982    470
-1983    480
-1984    490
-1985    500
-1986    510
-1987    520
-1988    530
-1989    540
-1990    550
-1991    560
-1992    570
-1993    580
-1994    590
-1995    600
-1996    610
-1997    620
-1998    630
-1999    640
-2000    650
-2001    660
-2002    670
-2003    680
-2004    690
-2005    700
-2006    710
-2007    720
-2008    730
-2009    740
-2010    750
-2011    760
-```
+### Americas (Variable Sending Region)
 
-**Visual Characteristics:**
-- **Data Segmentation**: Focused exclusively on Scandinavian countries (Denmark, Norway, Sweden)
-- **Regional Analysis**: Combined immigration totals from all three Nordic nations
-- **Year Conversion**: Years properly converted from string to integer for accurate regression
-- **All Previous Enhancements Combined:**
-  - Green regression line with confidence interval shading
-  - Plus sign (`+`) markers at 100 points size
-  - `whitegrid` background style for readability
-  - Font scale of 1.5 for all text elements
-  - 12×8 inch figure dimensions
-  - Complete axis labels: "Year" and "Total Immigration"
-  - Descriptive title: "Total Immigration from Denmark, Sweden, and Norway to Canada from 1980 - 2013"
+| Subregion | Pattern | Key Countries |
+|-----------|---------|---------------|
+| **North America** | Medium | US (345K-460K), Mexico (115K-230K) |
+| **Caribbean** | Medium | Jamaica (115K-230K), Haiti (50K-115K) |
+| **South America** | Low-Medium | Colombia, Peru, Brazil (<115K) |
+| **Central America** | Low | Guatemala, El Salvador (<50K) |
+
+### Africa (Emerging Sending Region)
+
+| Subregion | Pattern | Key Countries |
+|-----------|---------|---------------|
+| **North Africa** | Low-Medium | Egypt, Morocco, Algeria (<115K) |
+| **East Africa** | Low | Somalia, Ethiopia, Kenya (<50K) |
+| **West Africa** | Low | Nigeria, Ghana, Senegal (<50K) |
+| **Southern Africa** | Low | South Africa, Zimbabwe (<50K) |
+
+### Oceania (Minimal Sending Region)
+
+| Subregion | Pattern | Key Countries |
+|-----------|---------|---------------|
+| **Australia/New Zealand** | Low | Australia, New Zealand (<50K) |
+| **Pacific Islands** | Minimal | Fiji, Samoa, Tonga (<10K) |
 
 ---
 
-## Seaborn Regression Plot Components
+## Immigration Trends Interpretation
 
-### Core Elements
-```python
-sns.regplot(
-    x='year',           # Independent variable (predictor)
-    y='total',          # Dependent variable (response)
-    data=df_total,      # DataFrame containing the data
-    color='green',      # Color for regression line and confidence interval
-    marker='+',         # Marker style for scatter points
-    scatter_kws={'s': 100}  # Additional keyword arguments for scatter plot
-)
-```
+### Historical Context (1980-2013)
 
-**Component Breakdown:**
+**1980s Pattern:**
+- European immigration still significant (UK, Portugal, Italy)
+- Asian immigration beginning to rise (Vietnam, China)
+- US immigration moderate but steady
 
-| Component | Description | Statistical Meaning |
-|-----------|-------------|---------------------|
-| **Scatter Points** | Individual year observations | Actual data points for each year |
-| **Regression Line** | Best-fit linear model | Estimated trend over time |
-| **Confidence Interval** | Shaded region around line | 95% confidence band for the regression |
-| **Markers** | Symbol at each data point | Visual emphasis on observations |
+**1990s Pattern:**
+- Asian immigration accelerates (India, China, Philippines)
+- European immigration declines
+- Middle Eastern immigration increases (Iran, Lebanon)
 
-### Statistical Interpretation
-- **Positive Slope**: Increasing immigration trend
-- **Negative Slope**: Decreasing immigration trend
-- **Narrow CI**: High confidence in trend estimate
-- **Wide CI**: More uncertainty in trend
-- **Outliers**: Points far from regression line
+**2000s Pattern:**
+- South Asian dominance established (India, Pakistan, Sri Lanka)
+- Chinese immigration continues strong
+- Filipino immigration surges
+- African immigration begins steady growth
 
----
+### Policy Influences
 
-## Visual Design Principles
-
-### Progressive Enhancement Philosophy
-1. **Start Simple**: Basic regression plot with defaults (Plot 1)
-2. **Add Color**: Enhance visual distinction with green theme (Plot 2)
-3. **Customize Markers**: Improve point visibility with plus signs (Plot 3)
-4. **Scale Appropriately**: Adjust figure size for clarity (Plot 4)
-5. **Label Everything**: Provide context through text (Plot 5)
-6. **Typography Matters**: Scale fonts for readability (Plot 6)
-7. **Style Consistently**: Apply appropriate background styles (Plots 7-8)
-8. **Segment Data**: Focus on meaningful subsets (Plot 9)
-
-### Style Comparisons
-
-| Style | Appearance | Best Use Case |
-|-------|------------|---------------|
-| **Default** | White background, all spines | Quick exploration |
-| **Ticks** | No top/right spines, clean look | Publications, minimal design |
-| **Whitegrid** | Visible grid lines | Presentations, data analysis |
-| **Darkgrid** | Dark background with grid | Dark mode presentations |
-
-### Color Psychology
-- **Green**: Growth, stability, environmental themes (Scandinavian context)
-- **Blue**: Trust, professionalism (default Seaborn style)
-- **Consistent Colors**: Maintain visual continuity across sequence
+| Period | Policy Change | Impact |
+|--------|---------------|--------|
+| **1967** | Points-based system introduced | Shift from European to global immigration |
+| **1976** | Immigration Act | Family reunification emphasis |
+| **1990s** | Business immigration programs | Increased Asian professional immigration |
+| **2002** | Immigration and Refugee Protection Act | Skilled worker focus |
+| **2008** | Canadian Experience Class | International student pathway |
 
 ---
 
-## Key Insights from Visualizations
+## Interactive Features
 
-### Total Immigration Trends (1980-2013) - Plots 1-8
-1. **Overall Growth**: Positive slope indicates increasing immigration to Canada
-2. **Accelerating Trend**: Later years show steeper increases in immigrant numbers
-3. **Confidence Bands**: Narrow CI suggests reliable trend with minimal uncertainty
-4. **Year-to-Year Variation**: Scatter points show some fluctuation around the trend line
+### User Controls
 
-### Scandinavian Immigration Patterns - Plot 9
-1. **Smaller Scale**: 450-760 range versus 50,000-250,000 in total immigration
-2. **Stable Trend**: Relatively flat regression line with minimal annual change
-3. **Low Volatility**: Consistent immigration from Nordic countries year over year
-4. **Regional Characteristics**: Distinctly different pattern from overall Canadian trend
-5. **Gradual Increase**: Slight upward slope indicating modest growth in Scandinavian immigration
+| Control | Function |
+|---------|----------|
+| **Zoom In/Out** | Examine specific regions in detail |
+| **Pan** | Navigate to different continents |
+| **Hover** | View country names (browser dependent) |
+| **Legend** | Reference color-value mapping |
+| **Full Screen** | Expand map for better viewing |
 
-### Dataset Variations Observed
-- **Markering Dataset** (Plot 8): Demonstrates declining trend scenario
-- **Colorize Dataset** (Plot 9): Shows pattern shifts in regional data
-- **Scandinavian Dataset** (Plot 9): Highlights specialized regional analysis
+### Regional Exploration Tips
+
+| Region | Recommended Zoom | What to Observe |
+|--------|------------------|-----------------|
+| **South Asia** | Zoom 4 | India (dark red), Pakistan (orange) |
+| **East Asia** | Zoom 4 | China (dark red), South Korea (orange) |
+| **Europe** | Zoom 4 | UK (orange), France (yellow) |
+| **Middle East** | Zoom 5 | Iran (orange), Lebanon (yellow) |
+| **Caribbean** | Zoom 5 | Jamaica (yellow), Haiti (light yellow) |
+
+---
+
+## Data Insights Summary
+
+### Key Observations
+
+1. **Asian Dominance**: Three Asian countries (India, China, Philippines) each sent over 690,000 immigrants
+2. **European Transition**: Traditional European sources (UK, France) now surpassed by Asian nations
+3. **US-Canada Corridor**: Significant two-way migration (345K-460K from US)
+4. **Emerging Sources**: African and Latin American immigration growing but still modest
+5. **Concentration**: Top 10 countries account for over 60% of total immigration
+
+### Statistical Highlights
+
+| Metric | Value |
+|--------|-------|
+| **Total Immigrants (1980-2013)** | ~7.5 million |
+| **Top 3 Countries Share** | ~28% of total |
+| **Top 10 Countries Share** | ~62% of total |
+| **Asian Share** | ~55% of total |
+| **European Share** | ~25% of total |
+| **Americas Share** | ~15% of total |
+| **African Share** | ~4% of total |
+| **Oceanian Share** | ~1% of total |
 
 ---
 
 ## File Structure
 
 ```
-14-regression-plot/
+18-choropleth/
 ├── README.md
-├── regression-plot.py                       # Main visualization script with all 9 plots
-├── Canada.xlsx                               # Primary immigration dataset (1980-2013)
+├── choropleth.py
+├── Canada.xlsx
+├── world_countries.json
 ├── outputs/
-│   ├── 01-basic-regression.png                # Plot 1 - Basic regression with defaults
-│   ├── 02-color-regression.png                # Plot 2 - Green color customization
-│   ├── 03-marker-regression.png               # Plot 3 - Plus sign markers
-│   ├── 04-figure-size-regression.png          # Plot 4 - 12x8 inch figure size
-│   ├── 05-labels-regression.png               # Plot 5 - Axis labels and title
-│   ├── 06-fontscale-regression.png            # Plot 6 - Font scale 1.5
-│   ├── 07-ticks-style-regression.png          # Plot 7 - Ticks style
-│   ├── 08-whitegrid-style-regression.png      # Plot 8 - Whitegrid style
-│   └── 09-scandinavian-regression.png         # Plot 9 - Scandinavian countries analysis
+│   └── choropleth_world_map.html
 ├── data/
-│   ├── primary-dataset.csv                    # Full immigration dataset (1980-2013)
-│   ├── grid-dataset.csv                        # Dataset for Plot 3
-│   ├── ticks-dataset.csv                        # Dataset for Plot 4
-│   ├── fontsize-dataset.csv                      # Dataset for Plot 5
-│   ├── scale-dataset.csv                          # Dataset for Plot 6
-│   ├── enlarge-dataset.csv                         # Dataset for Plot 7
-│   ├── markering-dataset.csv                        # Dataset for Plot 8
-│   ├── colorize-dataset.csv                          # Dataset for Plot 9
-│   ├── scandinavian-immigration.csv                  # Denmark/Norway/Sweden subset
-│   ├── yearly-totals.csv                              # Aggregated annual immigration
-│   └── regression-stats.txt                           # Slope, intercept, R² values
-└── requirements.txt                                   # Python package dependencies
+│   ├── immigration-totals-by-country.csv
+│   ├── continental-breakdown.csv
+│   ├── regional-patterns.csv
+│   ├── top-20-countries.csv
+│   ├── color-scale-reference.md
+│   ├── geojson-properties.md
+│   └── historical-context/
+│       ├── 1980s-patterns.md
+│       ├── 1990s-patterns.md
+│       ├── 2000s-patterns.md
+│       └── policy-timeline.md
+└── requirements.txt
 ```
-
-
-The final Scandinavian regression plot (Plot 9) represents the culmination of all enhancements—showing how thoughtful, incremental improvements transform a basic statistical visualization into a sophisticated analysis tool for understanding regional immigration patterns to Canada from 1980 to 2013.
