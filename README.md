@@ -1,4 +1,5 @@
-<img width="250" height="200" align="right" alt="canada-removebg-preview" src="https://github.com/user-attachments/assets/d9ee090d-82b6-4a14-9cab-cd4e37e40b54" />
+<img width="1875" height="938" alt="Canada" src="https://github.com/user-attachments/assets/347e2fb5-3c83-43c1-8c5c-bb63a200bf67" />
+
 
 # International Immigration Data Analysis and Visualization to Canada from 1980 to 2013
 
