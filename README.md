@@ -1,6 +1,3 @@
-<img width="1875" height="938" alt="Canada" src="https://github.com/user-attachments/assets/347e2fb5-3c83-43c1-8c5c-bb63a200bf67" />
-
-
 # International Immigration Data Analysis and Visualization to Canada from 1980 to 2013
 
 ## Description
@@ -25,3 +22,4 @@ The dataset contains annual data on the flows of international immigrants as rec
 16. Folium Geospacial Plot` - Intro
 17. Maps with Markers
 18. Choropleth plot
+<img width="400" height="200" alt="Canada" src="https://github.com/user-attachments/assets/347e2fb5-3c83-43c1-8c5c-bb63a200bf67" />
