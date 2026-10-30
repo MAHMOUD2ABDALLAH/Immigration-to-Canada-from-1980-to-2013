@@ -4,22 +4,23 @@
 The dataset contains annual data on the flows of international immigrants as recorded by the countries of destination. The data presents both inflows and outflows according to the place of birth, citizenship, or place of previous/next residence for both foreigners and nationals. The current version presents data pertaining to 45 countries.
 
 ## Table of Contents
-1. Exploring Dataset
-2. Indexing and Filtering
-3. Visualizing
-4. Line Plot
-5. Area Plot
-6. Histogram Plot
-7. Bar chart Plot
-8. Pie chart Plot
-9. Box chart Plot
-10. Scatter Plot
-11. Bubble Plot
-12. Waffle Plot
-13. Word cloud Plot` - Intro
-14. Word cloud Plot
-15. Regression Plot
-16. Folium Geospacial Plot` - Intro
-17. Maps with Markers
-18. Choropleth plot
+ 1. [Exploring Dataset](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Exp-dataset)
+ 2. [Indexing and Filtering](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Indexing-and-Filtering)
+ 3. [Visualization](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Visualizing-dataset)
+ 4. [Line Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Line-plot)
+ 5. [Area Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Area-plot)
+ 6. [Histogram Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Histogram-plot)
+ 7. [Bar Chart Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Barchart-plot)
+ 8. [Pie Chart Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Piechart-plot)
+ 9. [Box Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Box-plot)
+10. [Scatter Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Scatter-plot)
+11. [Bubble Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Bubble-plot)
+12. [Waffle Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Waffle-plot)
+13. [Word Cloud Plot — Intro](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Wordcloud-intro-plot)
+14. [Word Cloud Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Wordcloud-plot)
+15. [Regression Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Regression-plot)
+16. [Folium Geospatial Plot — Intro](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Folium-plot)
+17. [Maps with Markers](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Maps-with-Markers)
+18. [Choropleth Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Choropleth-plot)
+
 <img width="400" height="200" alt="Canada" src="https://github.com/user-attachments/assets/347e2fb5-3c83-43c1-8c5c-bb63a200bf67" />
