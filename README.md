@@ -22,6 +22,3 @@ The dataset contains annual data on the flows of international immigrants as rec
 16. [Folium Geospatial Plot — Intro](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Folium-plot)
 17. [Maps with Markers](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Maps-with-Markers)
 18. [Choropleth Plot](https://github.com/MAHMOUD2ABDALLAH/Immigration-to-Canada-from-1980-to-2013/tree/Choropleth-plot)
-
-
-<img width="200" height="200" alt="Canada-ca" src="./Canada-ca.svg" />
